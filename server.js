@@ -1,7 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 console.log('Helllo World')
-
+ const port = process.env.PORT || 3000;
 var app = express();
 app.set({'view engine':'hbs'})
 hbs.registerPartials(__dirname +'/views/partials');
@@ -19,8 +19,8 @@ hbs.registerHelper('welcomeMssge', ()=>{
 })
 
 app.get('/',(req,res)=>{
- res.send({'Name':"New App"});
-
+ 
+    res.render('home.hbs',{'mssg':'Hi, Welcome to my Page'});
 });
 app.get('/about',(req,res) => {
     res.render('about.hbs',{'title':'New App'});
@@ -28,4 +28,4 @@ app.get('/about',(req,res) => {
 app.get('/home',(req,res) => {
     res.render('home.hbs',{'mssg':'Hi, Welcome to my Page'});
 });
-app.listen(3000);
+app.listen(port);
