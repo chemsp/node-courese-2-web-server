@@ -28,4 +28,7 @@ app.get('/about',(req,res) => {
 app.get('/home',(req,res) => {
     res.render('home.hbs',{'mssg':'Hi, Welcome to my Page'});
 });
+app.get('/project',(req,res) => {
+    res.render('project.hbs',{'mssg':'Hi, Welcome to my Page'});
+});
 app.listen(port);
